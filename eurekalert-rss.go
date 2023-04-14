@@ -135,9 +135,9 @@ func handlePage(doc *site2rss.Document, opts *site2rss.FindOnPage) *site2rss.Ite
 		}
 	}
 	if opts.Description != "" {
-		// until we figure out some way to get good summary, just skip the description
+		// until we figure out some way to get good de-HTMLified summary, just skip the description
 		//item.Description, _ = doc.Find(opts.Description).Html()
-		// this will automatically wrap the contents in CDATA which is what we want
+		// this will automatically wrap the HTML contents in CDATA which is what we want
 		item.Content, _ = doc.Find(opts.Description).Html()
 	}
 	return item
