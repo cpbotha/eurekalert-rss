@@ -4,6 +4,9 @@
 // to build and deploy:
 // # don't link with libc (cgo is enabled by default here)
 // export CGO_ENABLED=0
+// following two only required if you're cross-compiling
+// export GOOS=linux
+// export GOARCH=amd64
 // go build
 // scp eurekalert-rss web@web20.vxlabs.com:~/apps/cpbotha.net/feeds/
 // then stick in cronjob -- I run it every two hours
